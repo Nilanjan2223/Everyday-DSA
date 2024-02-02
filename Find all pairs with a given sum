@@ -1,0 +1,24 @@
+class Solution {
+    public pair[] allPairs( long A[], long B[], long N, long M, long X) {
+        // Your code goes here 
+        Set <Long> s = new HashSet<>();
+        ArrayList<pair> li = new ArrayList<>();
+        for (long x : B){
+        s.add(x);
+        }
+        Arrays.sort(A);
+        for (long y : A){
+            if (s.contains(X-y)){
+                pair p = new pair(y,X-y);
+                li.add(p);
+            }
+        }
+        pair [] ans = new pair [li.size()];
+        int k =0;
+        for (pair x : li){
+            ans[k++]= x;
+        }
+        
+        return ans;
+    }
+}
