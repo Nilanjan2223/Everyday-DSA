@@ -1,0 +1,18 @@
+class Solution {
+    public long kthElement( int arr1[], int arr2[], int n, int m, int k) {
+        int arr[] = new int [n+m];
+        int i = 0 ;
+        int j = 0;
+        while(i<n){
+            arr[i]= arr1[i];
+            i++;
+        }
+        while(j<m){
+            arr[j+n] = arr2[j];
+            j++;
+        }
+        Arrays.sort(arr);
+        return arr[k-1];
+        
+    }
+}
