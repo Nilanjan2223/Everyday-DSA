@@ -1,0 +1,30 @@
+class Solution
+{
+    long findSwapValues(long A[], int n, long  B[], int m)
+    {
+        // Your code goes here
+        Arrays.sort(A);
+        Arrays.sort(B);
+        
+        long asum = 0;
+        long bsum = 0;
+        
+        int x = 0;
+        int y = 0;
+        for (long i:A) asum+=i;
+        for (long j:B) bsum+=j;
+        while(x<n && y<m){
+            long aTemp = asum-A[x]+B[y];
+            long bTemp = bsum-B[y]+A[x];
+            
+            if (aTemp == bTemp)
+            return 1;
+            else if (aTemp< bTemp)
+            y++;
+            else
+            x++;
+            
+        }
+        return -1;
+    }
+}
