@@ -1,0 +1,16 @@
+class Solution {
+    String printLargest(int n, String[] arr) {
+        // code here
+        if (n==1){
+            return arr[0];
+        }
+        Arrays.sort(arr,(a,b)->(b,a).compareTo(a+b));
+        
+        String str = "";
+        for (int i=0;i<n;i++){
+            str+=arr[i];
+            
+        }
+        return str;
+    }
+}
