@@ -1,0 +1,17 @@
+class Solution 
+{ 
+    String firstRepChar(String s) 
+    { 
+        // code here
+        HashSet<Character> set = new HashSet<>();
+        for (char c :s.toCharArray()){
+            if (set.contains(c)){
+                return String.valueOf(c);
+            }
+            else{
+                set.add(c);
+            }
+        }
+        return "-1";
+    }
+} 
