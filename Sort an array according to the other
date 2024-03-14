@@ -1,0 +1,37 @@
+        for(int i = 0;i<M;i++)
+        {
+            if(map.containsKey(A2[i]))
+            {
+                for(int j= 0;j<map.get(A2[i]);j++)
+                {
+                    l1.add(A2[i]);
+                }
+                map.put(A2[i],0);
+            }
+        }
+        
+        //add the remaining element with non zero values to l2
+        for(int  i = 0;i<N;i++)
+        {
+            if(map.get(A1[i]) != 0)
+            l2.add(A1[i]);
+        }
+        //sort the list l2
+        Collections.sort(l2);
+        //now add the rest of elements in l1 from sorted l2
+        for(int i = 0;i<l2.size();i++)
+        {
+            l1.add(l2.get(i));
+        }
+        
+        //finally add the values to array 
+        for(int i = 0;i<l1.size();i++)
+        {
+            arr[i] = l1.get(i);
+        }
+        
+        return arr;
+        
+        
+    }
+}
